@@ -32,7 +32,18 @@ public class LinkedList {
     }
 
     //TODO: addFirst() Maryam
+    public void addFirst(String value) {
+        if (value == null) {
+            throw new IllegalArgumentException("Null cannot be added to the List");
+        }
+        Node newNode = new Node(value);
+        if (first == null) {
+            //Set the first element in the list to be the new node
 
+            first = newNode;
+            last = newNode;
+        }
+    }
 
     //TODO: add(value, pos)
 
@@ -97,18 +108,6 @@ public class LinkedList {
         }
 
 
-    }
-    public void addFirst(String value) {
-        if (value == null) {
-            throw new IllegalArgumentException("Null cannot be added to the List");
-        }
-        Node newNode = new Node(value);
-        if (first == null) {
-            //Set the first element in the list to be the new node
-
-            first = newNode;
-            last = newNode;
-        }
     }
 }
 
