@@ -16,6 +16,20 @@ public class LinkedList {
     //TODO: isEmpty() Bema
 
     //TODO: add() Oscar
+    public void add(String value) {
+        if (value == null) {
+            throw new IllegalArgumentException("Parameter cannot be null");
+        }
+        Node newNode = new Node(value);
+        if (first == null) {
+            first = newNode;
+            last = newNode;
+        } else {
+            last.next = newNode;
+            last = newNode;
+        }
+        numOfElements++;
+    }
 
     //TODO: addFirst() Maryam
 
@@ -32,6 +46,7 @@ public class LinkedList {
     //TODO: remove (value) Oscar
 
     //TODO: clear() Maryam
+
     private static class Node {
         private String data;
         private Node next;
