@@ -16,7 +16,13 @@ public class LinkedList {
         return numOfElements;
     }
     //TODO: isEmpty() Bema
-
+public boolean isEmpty(){
+    boolean found=false;
+    if(size()==0){
+        found=true;
+    }
+    return found;
+}
     //TODO: add() Oscar
     public void add(String value) {
         if (value == null) {
