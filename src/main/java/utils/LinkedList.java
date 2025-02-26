@@ -12,11 +12,17 @@ public class LinkedList {
     }
 
     //TODO: size() Bema
-public int size(){
-    return numOfElements;
-}
+    public int size(){
+        return numOfElements;
+    }
     //TODO: isEmpty() Bema
 
+public boolean isEmpty(){
+boolean found=false;
+if(size()==0){
+    found=true;
+}
+return true;
     //TODO: add() Oscar
 
     //TODO: addFirst() Maryam
