@@ -107,7 +107,28 @@ public boolean isEmpty(){
     }
 
     //TODO: remove (pos) Bema
-
+    public String remove(int pos){
+        if(pos>=numOfElements || pos<0){
+            throw new IndexOutOfBoundsException();
+        }
+        String data;
+        if(pos==0){
+            data=first.data;
+            first=first.next;
+        }
+        else{
+            Node current=first;
+            Node previous=null;
+            for(int i=0;i<pos;i++){
+                previous=current;
+                current=current.next;
+            }
+            data=current.data;
+            previous.next=current.next;
+        }
+        numOfElements--;
+        return data;
+    }
     //TODO: remove (value) Oscar
     public void remove(String value){
         int pos = indexOf(value);
