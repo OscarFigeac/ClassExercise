@@ -11,6 +11,27 @@ public class LinkedList {
         this.numOfElements = 0; //no argument constructor? yes
     }
 
+    //TODO: size() Bema
+
+    //TODO: isEmpty() Bema
+
+    //TODO: add() Oscar
+
+    //TODO: addFirst() Maryam
+
+    //TODO: add(value, pos)
+
+    //TODO: indexOf() Oscar
+
+    //TODO: get () Bema
+
+    //TODO: set() Maryam
+
+    //TODO: remove (pos) Bema
+
+    //TODO: remove (value) Oscar
+
+    //TODO: clear() Maryam
     private static class Node {
         private String data;
         private Node next;
