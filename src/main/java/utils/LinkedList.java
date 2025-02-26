@@ -36,6 +36,20 @@ public class LinkedList {
     //TODO: add(value, pos)
 
     //TODO: indexOf() Oscar
+    public int indexOf(String value) {
+        if (value == null) {
+            throw new IllegalArgumentException("Parameter cannot be null");
+        }
+        Node newNode = new Node(value);
+        Node current = first;
+        for (int i = 0; i <= numOfElements; i++) {
+            if (current.equals(newNode)) {
+                return i;
+            }
+            current = current.next;
+        }
+        return -1;
+    }
 
     //TODO: get () Bema
 
