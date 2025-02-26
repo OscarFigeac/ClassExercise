@@ -12,9 +12,17 @@ public class LinkedList {
     }
 
     //TODO: size() Bema
-
+    public int size(){
+        return numOfElements;
+    }
     //TODO: isEmpty() Bema
-
+public boolean isEmpty(){
+    boolean found=false;
+    if(size()==0){
+        found=true;
+    }
+    return found;
+}
     //TODO: add() Oscar
     public void add(String value) {
         if (value == null) {
@@ -31,19 +39,7 @@ public class LinkedList {
         numOfElements++;
     }
 
-    //TODO: addFirst() Maryam
-    public void addFirst(String value) {
-        if (value == null) {
-            throw new IllegalArgumentException("Null cannot be added to the List");
-        }
-        Node newNode = new Node(value);
-        if (first == null) {
-            //Set the first element in the list to be the new node
 
-            first = newNode;
-            last = newNode;
-        }
-    }
 
     //TODO: add(value, pos)
 
@@ -64,8 +60,34 @@ public class LinkedList {
     }
 
     //TODO: get () Bema
-
+    public String get(int pos){
+        if(isEmpty() || pos>=size() || pos<0){
+            throw new IndexOutOfBoundsException();
+        }
+    else{
+        Node current=first;
+        for(int i=0;i<pos;i++){
+            current=current.next;
+        }
+        return current.data;
+    }
+}
     //TODO: set() Maryam
+    public void set(int index, String data) {
+        // VALIDATION:
+        if (isEmpty() || index < 0 || index >= numOfElements) {
+            throw new IndexOutOfBoundsException("Index must be between 0 and " + numOfElements + ". (Supplied index was " + index + ")");
+        }
+
+        // SET UP:
+        Node current = first;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+
+        // UPDATE:
+        current.data = data;
+    }
 
     //TODO: remove (pos) Bema
 
@@ -97,6 +119,11 @@ public class LinkedList {
         numOfElements--;
     }
     //TODO: clear() Maryam
+    public void clear() {
+        first = null;
+        last = null;
+        numOfElements = 0;
+    }
 
     private static class Node {
         private String data;
@@ -108,6 +135,18 @@ public class LinkedList {
         }
 
 
+    }
+    public void addFirst(String value) {
+        if (value == null) {
+            throw new IllegalArgumentException("Null cannot be added to the List");
+        }
+        Node newNode = new Node(value);
+        if (first == null) {
+            //Set the first element in the list to be the new node
+
+            first = newNode;
+            last = newNode;
+        }
     }
 }
 
