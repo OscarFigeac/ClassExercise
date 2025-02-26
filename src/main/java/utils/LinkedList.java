@@ -13,7 +13,7 @@ public class LinkedList {
 
     //TODO: size() Bema
     public int size(){
-        return numElements;
+        return numOfElements;
     }
     //TODO: isEmpty() Bema
 
