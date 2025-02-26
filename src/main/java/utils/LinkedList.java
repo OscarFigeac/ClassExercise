@@ -60,7 +60,18 @@ public boolean isEmpty(){
     }
 
     //TODO: get () Bema
-
+    public String get(int pos){
+        if(isEmpty() || pos>=size() || pos<0){
+            throw new IndexOutOfBoundsException();
+        }
+    else{
+        Node current=first;
+        for(int i=0;i<pos;i++){
+            current=current.next;
+        }
+        return current.data;
+    }
+}
     //TODO: set() Maryam
     public void set(int index, String data) {
         // VALIDATION:
