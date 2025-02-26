@@ -12,17 +12,9 @@ public class LinkedList {
     }
 
     //TODO: size() Bema
-    public int size(){
-        return numOfElements;
-    }
+
     //TODO: isEmpty() Bema
-public boolean isEmpty(){
-    boolean found=false;
-    if(size()==0){
-        found=true;
-    }
-    return found;
-}
+
     //TODO: add() Oscar
     public void add(String value) {
         if (value == null) {
@@ -39,6 +31,7 @@ public boolean isEmpty(){
         numOfElements++;
     }
 
+    //TODO: addFirst() Maryam
 
 
     //TODO: add(value, pos)
@@ -62,21 +55,6 @@ public boolean isEmpty(){
     //TODO: get () Bema
 
     //TODO: set() Maryam
-    public void set(int index, String data) {
-        // VALIDATION:
-        if (isEmpty() || index < 0 || index >= numOfElements) {
-            throw new IndexOutOfBoundsException("Index must be between 0 and " + numOfElements + ". (Supplied index was " + index + ")");
-        }
-
-        // SET UP:
-        Node current = first;
-        for (int i = 0; i < index; i++) {
-            current = current.next;
-        }
-
-        // UPDATE:
-        current.data = data;
-    }
 
     //TODO: remove (pos) Bema
 
@@ -108,9 +86,6 @@ public boolean isEmpty(){
         numOfElements--;
     }
     //TODO: clear() Maryam
-    public void clear(){
-
-    }
 
     private static class Node {
         private String data;
