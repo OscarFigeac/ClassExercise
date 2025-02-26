@@ -42,6 +42,23 @@ public boolean isEmpty(){
 
 
     //TODO: add(value, pos)
+    public void add(String value, int pos){
+        if (value == null){
+            throw new IllegalArgumentException("Provided element cannot be null");
+        }
+        if (isEmpty() || pos < 0 || pos >= numOfElements){
+            throw new IndexOutOfBoundsException("Provided position was " + pos + " which is outside " +
+                    "of the boundary area");
+        }
+        Node newNode = new Node(value);
+        Node current = first;
+        for (int i = 0; i < pos-1; i++) {
+            current = current.next;
+        }
+        newNode.next = current.next;
+        current.next = newNode;
+        numOfElements++;
+    }
 
     //TODO: indexOf() Oscar
     public int indexOf(String value) {
