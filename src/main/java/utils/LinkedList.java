@@ -119,8 +119,10 @@ public boolean isEmpty(){
         numOfElements--;
     }
     //TODO: clear() Maryam
-    public void clear(){
-
+    public void clear() {
+        first = null;
+        last = null;
+        numOfElements = 0;
     }
 
     private static class Node {
