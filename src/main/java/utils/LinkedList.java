@@ -58,7 +58,32 @@ public class LinkedList {
     //TODO: remove (pos) Bema
 
     //TODO: remove (value) Oscar
-
+    public void remove(String value){
+        int pos = indexOf(value);
+        if (isEmpty() || pos < 0 || pos >= numOfElements){
+            throw new IndexOutOfBoundsException("Provided position was " + pos + " which is outside " +
+                    "of the boundary area");
+        }
+        if (pos == 0){
+            Node current = first;
+            first = first.next;
+            if (first == null){
+                last = null;
+            }
+        }else{
+            Node current = first;
+            Node prev = null;
+            for (int i = 0; i < pos; i++) {
+                prev = current;
+                current = current.next;
+            }
+            prev.next = current.next;
+            if (prev.next == null){
+                last = prev;
+            }
+        }
+        numOfElements--;
+    }
     //TODO: clear() Maryam
 
     private static class Node {
