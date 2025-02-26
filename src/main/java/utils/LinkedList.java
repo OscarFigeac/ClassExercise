@@ -12,7 +12,9 @@ public class LinkedList {
     }
 
     //TODO: size() Bema
-   
+    public int size(){
+        return numElements;
+    }
     //TODO: isEmpty() Bema
 
     //TODO: add() Oscar
