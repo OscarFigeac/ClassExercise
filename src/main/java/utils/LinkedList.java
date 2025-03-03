@@ -28,6 +28,10 @@ public boolean isEmpty(){
         if (value == null) {
             throw new IllegalArgumentException("Parameter cannot be null");
         }
+        if (!isNotDup(value)){
+            throw new IllegalArgumentException("Passed parameter is already in the array. Provided " +
+                    "parameter was: " + value);
+        }
         Node newNode = new Node(value);
         if (first == null) {
             first = newNode;
