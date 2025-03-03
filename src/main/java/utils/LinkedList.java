@@ -54,10 +54,11 @@ public boolean isEmpty(){
             return false;
         }
         Node current = first;
-        for (int i = 0; i < numOfElements - 1; i++) {
-            if (current.equals(current.next)){
+        for (int i = 0; i <= numOfElements - 1; i++) {
+            if (current.data.equals(value)){
                 return false;
             }
+            current = current.next;
         }
         return true;
     }
