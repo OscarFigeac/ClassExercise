@@ -39,6 +39,7 @@ public boolean isEmpty(){
         numOfElements++;
     }
 
+//Testing pull
 
 
     //TODO: add(value, pos)
