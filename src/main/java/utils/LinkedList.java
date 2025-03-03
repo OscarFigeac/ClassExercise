@@ -67,6 +67,10 @@ public boolean isEmpty(){
         if (value == null){
             throw new IllegalArgumentException("Provided element cannot be null");
         }
+        if (!isNotDup(value)){
+            throw new IllegalArgumentException("Passed parameter is already in the array. Provided " +
+                    "parameter was: " + value);
+        }
         if (isEmpty() || pos < 0 || pos >= numOfElements){
             throw new IndexOutOfBoundsException("Provided position was " + pos + " which is outside " +
                     "of the boundary area");
@@ -198,6 +202,10 @@ public boolean isEmpty(){
     public void addFirst(String value) {
         if (value == null) {
             throw new IllegalArgumentException("Null cannot be added to the List");
+        }
+        if (!isNotDup(value)){
+            throw new IllegalArgumentException("Passed parameter is already in the array. Provided " +
+                    "parameter was: " + value);
         }
         Node newNode = new Node(value);
         if (first == null) {
