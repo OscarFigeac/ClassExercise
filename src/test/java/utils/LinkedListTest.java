@@ -200,7 +200,7 @@ class LinkListTest {
         }
 
         int sizeBeforeAdd = myList.size();
-
+    
         String toBeAdded = "New element";
         int posToBeAdded = 0;
         myList.add(toBeAdded, posToBeAdded);
