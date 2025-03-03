@@ -39,9 +39,25 @@ public boolean isEmpty(){
         numOfElements++;
     }
 
-//Testing pull
+    /**
+     * Takes in a String value and checks if it already exists in the List.
+     * @param value the value being looked for.
+     * @return false if the value is duplicate; true otherwise.
+     * @author oscar
+     */
+    public boolean isNotDup(String value){
+        if (value == null){
+            return false;
+        }
+        Node current = first;
+        for (int i = 0; i < numOfElements - 1; i++) {
+            if (current.equals(current.next)){
+                return false;
+            }
+        }
+        return true;
+    }
 
-//comment to repush this
     //TODO: add(value, pos)
     public void add(String value, int pos){
         if (value == null){
